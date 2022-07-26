@@ -1,10 +1,19 @@
 import React from "react";
 
-const Input = () => {
+const Input = ({ colorValue, setColorValue }) => {
   return (
-    <div>
-      <h2>Input</h2>
-    </div>
+    <form onSubmit={(e) => e.preventDefault()}>
+      <label htmlFor="color">Add Color Name:</label>
+      <input
+        id="color"
+        type="text"
+        autoFocus
+        placeholder="Add color name"
+        required
+        value={colorValue}
+        onChange={(e) => setColorValue(e.target.value)}
+      />
+    </form>
   );
 };
 
